@@ -1,0 +1,70 @@
+{
+  "portfolio_status": {
+    "total_investment": 50000000,
+    "current_value": 50000000,
+    "total_return": 0,
+    "total_return_pct": 0,
+    "last_updated": "2025-06-02T01:50:00Z"
+  },
+  
+  "holdings": {
+    "theme_etf": {
+      "total_amount": 12500000,
+      "target_pct": 25,
+      "current_pct": 25,
+      "positions": [
+        {"symbol": "PLUS_K방산", "amount": 5000000, "shares": 0, "avg_price": 0},
+        {"symbol": "SOL_조선TOP3플러스", "amount": 4000000, "shares": 0, "avg_price": 0},
+        {"symbol": "TIGER_K방산우주", "amount": 3500000, "shares": 0, "avg_price": 0}
+      ]
+    },
+    
+    "stable_etf": {
+      "total_amount": 22500000,
+      "target_pct": 45,
+      "current_pct": 45,
+      "positions": [
+        {"symbol": "TIGER_코스닥150", "amount": 9000000, "shares": 0, "avg_price": 0},
+        {"symbol": "KODEX_미국S&P500TR", "amount": 8000000, "shares": 0, "avg_price": 0},
+        {"symbol": "KODEX200", "amount": 5500000, "shares": 0, "avg_price": 0}
+      ]
+    },
+    
+    "individual_stocks": {
+      "total_amount": 10000000,
+      "target_pct": 20,
+      "current_pct": 20,
+      "positions": [
+        {"symbol": "삼성전자", "amount": 4000000, "shares": 0, "avg_price": 0},
+        {"symbol": "SK하이닉스", "amount": 3500000, "shares": 0, "avg_price": 0},
+        {"symbol": "LG에너지솔루션", "amount": 2500000, "shares": 0, "avg_price": 0}
+      ]
+    },
+    
+    "financial_stocks": {
+      "total_amount": 5000000,
+      "target_pct": 10,
+      "current_pct": 10,
+      "positions": [
+        {"symbol": "KB금융", "amount": 2000000, "shares": 0, "avg_price": 0},
+        {"symbol": "신한지주", "amount": 1500000, "shares": 0, "avg_price": 0},
+        {"symbol": "미래에셋증권", "amount": 1500000, "shares": 0, "avg_price": 0}
+      ]
+    }
+  },
+  
+  "risk_management": {
+    "stop_loss_rules": {
+      "theme_etf": -0.15,
+      "stable_etf": -0.10,
+      "individual_stocks": -0.20,
+      "financial_stocks": -0.15
+    },
+    "take_profit_rules": {
+      "theme_etf": 0.40,
+      "stable_etf": 0.25,
+      "individual_stocks": 0.50,
+      "financial_stocks": 0.30
+    }
+  }
+}
