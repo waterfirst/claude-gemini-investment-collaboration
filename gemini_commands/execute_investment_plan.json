@@ -1,0 +1,83 @@
+{
+  "timestamp": "2025-06-02T01:50:00Z",
+  "from": "Claude",
+  "to": "Gemini",
+  "command_type": "investment_execution",
+  "priority": "HIGH",
+  "summary": "6월 2일 투자 실행 명령",
+  
+  "calendar_tasks": [
+    {
+      "type": "create_event",
+      "title": "🔥 테마 ETF 매수 (1,250만원)",
+      "date": "2025-06-02",
+      "time": "09:00-09:30",
+      "description": "PLUS K방산 500만원, SOL 조선TOP3플러스 400만원, TIGER K방산&우주 350만원",
+      "reminders": ["15분 전", "5분 전"]
+    },
+    {
+      "type": "create_event", 
+      "title": "🛡️ 안정 ETF 매수 (2,250만원)",
+      "date": "2025-06-02",
+      "time": "10:00-11:00",
+      "description": "TIGER 코스닥150 900만원, KODEX 미국S&P500TR 800만원, KODEX200 550만원",
+      "reminders": ["10분 전"]
+    },
+    {
+      "type": "create_event",
+      "title": "💎 개별주 매수 (1,000만원)", 
+      "date": "2025-06-02",
+      "time": "13:30-15:00",
+      "description": "삼성전자 400만원, SK하이닉스 350만원, LG에너지솔루션 250만원",
+      "reminders": ["10분 전"]
+    },
+    {
+      "type": "create_event",
+      "title": "📊 대선 결과 모니터링",
+      "date": "2025-06-03", 
+      "time": "20:00-22:00",
+      "description": "개표 상황 확인 및 포트폴리오 대응 전략 검토",
+      "reminders": ["1시간 전", "30분 전"]
+    }
+  ],
+  
+  "price_alerts": [
+    {
+      "symbol": "테마_ETF_전체",
+      "alert_type": "stop_loss",
+      "trigger_price": "-15%",
+      "action": "immediate_notification"
+    },
+    {
+      "symbol": "테마_ETF_전체",
+      "alert_type": "take_profit", 
+      "trigger_price": "+40%",
+      "action": "partial_sell_30%_notification"
+    }
+  ],
+  
+  "monitoring_tasks": [
+    {
+      "frequency": "daily_morning",
+      "time": "08:00",
+      "task": "portfolio_status_check",
+      "report_method": "email_summary"
+    },
+    {
+      "frequency": "real_time",
+      "condition": "market_volatility > 5%",
+      "task": "emergency_alert",
+      "action": "request_claude_analysis"
+    }
+  ],
+  
+  "claude_collaboration": {
+    "request_analysis_triggers": [
+      "portfolio drops > 10%",
+      "major market event occurs",
+      "weekly review scheduled"
+    ],
+    "shared_data_location": "shared_data/",
+    "communication_log": "communication_log/gemini_responses.json"
+  }
+}
