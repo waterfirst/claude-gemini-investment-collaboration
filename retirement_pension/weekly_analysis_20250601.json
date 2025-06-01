@@ -1,0 +1,145 @@
+{
+  "analysis_date": "2025-06-01T23:00:00Z",
+  "analysis_type": "weekly_strategy",
+  "analyst": "Claude",
+  "priority": "HIGH",
+  
+  "portfolio_summary": {
+    "total_investment": 46982900,
+    "total_positions": 11,
+    "largest_position": {
+      "symbol": "KODEX 미국S&P500",
+      "weight": 56.2,
+      "amount": 26416865,
+      "risk_level": "medium"
+    },
+    "portfolio_score": 75,
+    "risk_assessment": "중간-높음"
+  },
+  
+  "market_analysis": {
+    "overall_trend": "상승세 지속",
+    "key_events": [
+      "6월 3일 대선 임박",
+      "미국 S&P500 신고점 근접",
+      "방산/조선 테마 강세 지속"
+    ],
+    "sector_outlook": {
+      "defense": "매우 긍정적 - 지정학적 리스크 지속",
+      "shipbuilding": "긍정적 - 글로벌 수주 증가",
+      "us_stocks": "중립 - 고평가 우려",
+      "china_tech": "부정적 - 지정학적 리스크"
+    }
+  },
+  
+  "critical_issues": [
+    {
+      "issue": "미국 주식 과도한 집중",
+      "current_weight": 57.2,
+      "target_weight": 45.0,
+      "action_required": "즉시 리밸런싱",
+      "risk_level": "high"
+    },
+    {
+      "issue": "테슬라 펀드 중복",
+      "description": "2개 테슬라 관련 펀드 보유",
+      "action_required": "1개 정리",
+      "risk_level": "medium"
+    },
+    {
+      "issue": "안전자산 부족",
+      "current_weight": 1.6,
+      "target_weight": 10.0,
+      "action_required": "채권 ETF 추가",
+      "risk_level": "medium"
+    }
+  ],
+  
+  "immediate_recommendations": [
+    {
+      "action": "매도",
+      "symbol": "KODEX 미국S&P500",
+      "target_amount": 5000000,
+      "reason": "비중 조정 및 환율 리스크 감소",
+      "priority": "HIGH",
+      "execution_timeframe": "1주 이내"
+    },
+    {
+      "action": "매수",
+      "symbol": "KODEX200",
+      "target_amount": 5000000,
+      "reason": "국내 주식 비중 확대",
+      "priority": "HIGH",
+      "execution_timeframe": "1주 이내"
+    },
+    {
+      "action": "매도",
+      "symbol": "TIGER 테슬라채권혼합Fn",
+      "target_amount": 2000000,
+      "reason": "테슬라 중복 해소",
+      "priority": "MEDIUM",
+      "execution_timeframe": "2주 이내"
+    },
+    {
+      "action": "매수",
+      "symbol": "TIGER 국고채10년",
+      "target_amount": 3000000,
+      "reason": "안전자산 비중 확대",
+      "priority": "MEDIUM",
+      "execution_timeframe": "2주 이내"
+    }
+  ],
+  
+  "market_timing": {
+    "current_phase": "대선 전 불확실성",
+    "recommended_strategy": "점진적 리밸런싱",
+    "avoid_timing": "대선 당일(6/3) 거래 자제",
+    "optimal_timing": "대선 결과 확정 후 1주일"
+  },
+  
+  "performance_targets": {
+    "next_month": {
+      "target_return": 3.0,
+      "risk_tolerance": 15.0,
+      "benchmark": "KOSPI200"
+    },
+    "next_quarter": {
+      "target_return": 8.0,
+      "risk_tolerance": 12.0,
+      "benchmark": "혼합형 펀드 평균"
+    },
+    "retirement_goal_2030": {
+      "target_amount": 150000000,
+      "required_annual_return": 11.2,
+      "current_progress": 31.3
+    }
+  },
+  
+  "gemini_instructions": {
+    "urgent_alerts": [
+      "KODEX 미국S&P500 비중이 60% 초과 시 즉시 알림",
+      "전체 포트폴리오 일일 변동률 ±5% 초과 시 알림",
+      "개별 종목 ±10% 급등락 시 즉시 알림"
+    ],
+    "weekly_tasks": [
+      "매주 금요일 전체 성과 요약",
+      "리밸런싱 필요 종목 체크",
+      "새로운 Claude 분석 시트 반영"
+    ],
+    "execution_priority": [
+      "1순위: KODEX 미국S&P500 비중 축소",
+      "2순위: KODEX200 신규 편입",
+      "3순위: 테슬라 펀드 정리"
+    ]
+  },
+  
+  "next_analysis_schedule": {
+    "daily_check": "매일 08:00 시장 상황 모니터링",
+    "weekly_review": "매주 금요일 16:00 성과 분석", 
+    "monthly_rebalancing": "매월 마지막 금요일 리밸런싱 계획",
+    "emergency_analysis": "포트폴리오 변동 ±10% 시 즉시"
+  },
+  
+  "confidence_level": 85,
+  "risk_warning": "대선 기간 중 변동성 확대 가능성 주의"
+}
