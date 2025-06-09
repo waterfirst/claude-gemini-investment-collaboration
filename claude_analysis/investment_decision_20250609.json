@@ -1,0 +1,82 @@
+{
+  "analysis_date": "2025-06-09",
+  "analysis_type": "retirement_pension_investment",
+  "investment_decisions": [
+    {
+      "symbol": "KODEX증권",
+      "code": "226490",
+      "action": "BUY",
+      "quantity": 400,
+      "price": 12320,
+      "total_amount": 4928000,
+      "reasoning": {
+        "sector_diversification": "금융섹터 ETF로 포트폴리오 분산 효과",
+        "valuation": "PBR 0.8배 저평가 구간",
+        "market_timing": "금리 안정화로 금융주 회복 기대",
+        "risk_level": "LOW"
+      },
+      "expected_return": "8-12%",
+      "investment_thesis": "금융섹터 ETF를 통한 분산투자와 저평가 매력도 활용"
+    },
+    {
+      "symbol": "TIGER지주회사",
+      "code": "161890",
+      "action": "BUY",
+      "quantity": 400,
+      "price": 14125,
+      "total_amount": 5650000,
+      "reasoning": {
+        "value_strategy": "지주회사 할인율 30% 이상으로 저평가",
+        "catalyst": "구조조정 완료 후 가치 재평가 기대",
+        "diversification": "기존 테크주 중심 포트폴리오 보완",
+        "risk_level": "MEDIUM"
+      },
+      "expected_return": "10-15%",
+      "investment_thesis": "지주회사 할인 해소를 통한 가치 실현 전략"
+    }
+  ],
+  "portfolio_impact": {
+    "total_new_investment": 10578000,
+    "portfolio_weight_change": {
+      "domestic_exposure": "+5%",
+      "financial_sector": "+2.4%",
+      "value_style": "+5.1%"
+    },
+    "risk_metrics": {
+      "diversification_score": "IMPROVED",
+      "correlation_reduction": "POSITIVE",
+      "volatility_impact": "NEUTRAL"
+    }
+  },
+  "market_context": {
+    "kospi_trend": "UPWARD",
+    "financial_sector": "RECOVERY_START",
+    "valuation_level": "ATTRACTIVE",
+    "interest_rate_environment": "STABILIZING"
+  },
+  "strategic_rationale": {
+    "sector_rotation": "글로벌 테크에서 국내 금융/지주회사로 일부 자금 이동",
+    "value_play": "저평가 섹터 매수를 통한 포트폴리오 밸런스 개선",
+    "risk_management": "개별 종목 비중 3% 미만 유지로 리스크 통제"
+  },
+  "performance_expectations": {
+    "short_term_1_3m": "5-8%",
+    "medium_term_6m": "8-12%",
+    "long_term_1y": "10-15%"
+  },
+  "next_actions": {
+    "monitoring": [
+      "금융주 실적 발표 추적",
+      "지주회사 할인폭 변화 모니터링",
+      "포트폴리오 상관관계 분석"
+    ],
+    "rebalancing_trigger": "개별 종목 비중 5% 초과시 일부 매도 검토",
+    "exit_strategy": "목표 수익률 달성 또는 투자 논리 변화시 정리"
+  },
+  "claude_assessment": {
+    "decision_quality": "EXCELLENT",
+    "risk_reward_ratio": "FAVORABLE",
+    "strategic_fit": "HIGH",
+    "overall_grade": "A"
+  }
+}

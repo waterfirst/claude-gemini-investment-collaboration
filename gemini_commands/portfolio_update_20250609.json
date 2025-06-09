@@ -1,0 +1,56 @@
+{
+  "command_type": "portfolio_update",
+  "execution_date": "2025-06-09",
+  "priority": "HIGH",
+  "instructions_for_gemini": {
+    "action": "UPDATE_PORTFOLIO_TRACKING",
+    "new_positions": [
+      {
+        "symbol": "KODEX증권",
+        "code": "226490",
+        "quantity": 400,
+        "avg_price": 12320,
+        "total_investment": 4928000,
+        "category": "국내ETF",
+        "sector": "금융"
+      },
+      {
+        "symbol": "TIGER지주회사",
+        "code": "161890",
+        "quantity": 400,
+        "avg_price": 14125,
+        "total_investment": 5650000,
+        "category": "국내ETF",
+        "sector": "지주회사"
+      }
+    ],
+    "portfolio_rebalancing": {
+      "update_weights": true,
+      "recalculate_metrics": true,
+      "generate_performance_report": true
+    },
+    "monitoring_alerts": {
+      "price_alerts": [
+        {"code": "226490", "trigger": "15% gain/loss"},
+        {"code": "161890", "trigger": "15% gain/loss"}
+      ],
+      "rebalancing_alerts": "개별 종목 비중 5% 초과시"
+    }
+  },
+  "data_sources": [
+    "claude_analysis/investment_decision_20250609.json",
+    "retirement_pension/transaction_log_20250609.json",
+    "retirement_pension/portfolio_analysis_20250609.md"
+  ],
+  "expected_outputs": [
+    "updated_portfolio_tracker.csv",
+    "performance_dashboard.html",
+    "risk_metrics_report.json"
+  ],
+  "claude_notes": {
+    "investment_rationale": "섹터 분산과 밸류 전략 기반 투자",
+    "risk_assessment": "LOW-MEDIUM (적절한 포지션 사이징)",
+    "performance_target": "연간 8-15% 수익률 기대",
+    "next_review_date": "2025-07-09"
+  }
+}
