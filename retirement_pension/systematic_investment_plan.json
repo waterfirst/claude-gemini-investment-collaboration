@@ -1,0 +1,151 @@
+{
+  "plan_name": "퇴직연금 적립식 투자 계획",
+  "total_monthly_investment": 1800000,
+  "investment_start_date": "2025-06-01",
+  "investment_strategy": "dollar_cost_averaging",
+  "rebalancing_frequency": "annually",
+  "target_retirement_date": "2030-12-31",
+  "investment_philosophy": "장기 분산투자를 통한 안정적 자산증식",
+  
+  "monthly_investments": [
+    {
+      "rank": 1,
+      "etf_name": "TIGER 미국S&P500",
+      "etf_code": "360750",
+      "monthly_amount": 500000,
+      "investment_day": 10,
+      "investment_time": "11:00",
+      "weight_percentage": 27.8,
+      "asset_class": "글로벌주식",
+      "region": "미국",
+      "investment_rationale": "글로벌 대형주 중심의 안정적 성장 추구"
+    },
+    {
+      "rank": 2,
+      "etf_name": "TIGER 국고채30년스트립액티브",
+      "etf_code": "458750",
+      "monthly_amount": 300000,
+      "investment_day": 10,
+      "investment_time": "11:00",
+      "weight_percentage": 16.7,
+      "asset_class": "채권",
+      "region": "국내",
+      "investment_rationale": "장기 안전자산으로 포트폴리오 안정성 확보"
+    },
+    {
+      "rank": 3,
+      "etf_name": "ACE KRX금현물",
+      "etf_code": "132030",
+      "monthly_amount": 300000,
+      "investment_day": 10,
+      "investment_time": "11:00",
+      "weight_percentage": 16.7,
+      "asset_class": "원자재",
+      "region": "글로벌",
+      "investment_rationale": "인플레이션 헤지 및 포트폴리오 분산효과"
+    },
+    {
+      "rank": 4,
+      "etf_name": "PLUS K방산",
+      "etf_code": "261270",
+      "monthly_amount": 300000,
+      "investment_day": 15,
+      "investment_time": "11:00",
+      "weight_percentage": 16.7,
+      "asset_class": "테마주",
+      "region": "국내",
+      "investment_rationale": "방산산업 장기 성장 테마 투자"
+    },
+    {
+      "rank": 5,
+      "etf_name": "TIGER 조선TOP10",
+      "etf_code": "267770",
+      "monthly_amount": 300000,
+      "investment_day": 15,
+      "investment_time": "11:00",
+      "weight_percentage": 16.7,
+      "asset_class": "테마주",
+      "region": "국내",
+      "investment_rationale": "조선업 사이클 회복 및 친환경선박 수요 증가"
+    },
+    {
+      "rank": 6,
+      "etf_name": "KIWOOM 국고채3년",
+      "etf_code": "455530",
+      "monthly_amount": 300000,
+      "investment_day": 15,
+      "investment_time": "11:00",
+      "weight_percentage": 16.7,
+      "asset_class": "채권",
+      "region": "국내",
+      "investment_rationale": "단기채권으로 금리 리스크 관리 및 안정성 확보"
+    }
+  ],
+  
+  "portfolio_allocation": {
+    "by_asset_class": {
+      "글로벌주식": 27.8,
+      "국내테마주": 33.4,
+      "채권": 33.4,
+      "원자재": 16.7
+    },
+    "by_region": {
+      "미국": 27.8,
+      "국내": 66.8,
+      "글로벌": 16.7
+    },
+    "by_risk_level": {
+      "안전자산(채권+금)": 50.1,
+      "위험자산(주식)": 61.2
+    }
+  },
+  
+  "investment_schedule": {
+    "first_batch": {
+      "day": 10,
+      "etfs": ["TIGER 미국S&P500", "TIGER 국고채30년스트립액티브", "ACE KRX금현물"],
+      "total_amount": 1100000
+    },
+    "second_batch": {
+      "day": 15,
+      "etfs": ["PLUS K방산", "TIGER 조선TOP10", "KIWOOM 국고채3년"],
+      "total_amount": 900000
+    }
+  },
+  
+  "performance_targets": {
+    "annual_return_expectation": "6-8%",
+    "volatility_target": "<15%",
+    "sharpe_ratio_target": ">0.4",
+    "max_drawdown_limit": "<20%"
+  },
+  
+  "risk_management": {
+    "rebalancing_rule": "연 1회 또는 자산배분 ±5% 이탈시",
+    "stop_loss_rule": "개별 ETF 30% 이상 손실시 검토",
+    "profit_taking_rule": "목표수익률 달성시 일부 이익실현",
+    "emergency_exit": "시장 급락시(-20% 이상) 일시 중단 검토"
+  },
+  
+  "monitoring_schedule": {
+    "daily": "가격 모니터링 (자동)",
+    "weekly": "포트폴리오 성과 점검",
+    "monthly": "적립 실행 및 기록",
+    "quarterly": "자산배분 점검",
+    "annually": "전략 재검토 및 리밸런싱"
+  },
+  
+  "tax_optimization": {
+    "account_type": "퇴직연금 (DC형)",
+    "tax_benefits": "운용수익 비과세",
+    "withdrawal_tax": "연금소득세 (3.3-5.5%)",
+    "optimal_withdrawal": "2030년 이후 연금 형태 수령"
+  },
+  
+  "notes": {
+    "investment_philosophy": "시간 분산을 통한 리스크 관리와 장기 복리효과 추구",
+    "market_timing": "시장 타이밍보다는 꾸준한 투자가 우선",
+    "flexibility": "기회투자는 별도 관리, 적립식은 원칙 고수",
+    "review_cycle": "1년에 1-2회만 전략 점검, 과도한 변경 지양"
+  }
+}
