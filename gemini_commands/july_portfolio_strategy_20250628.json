@@ -1,0 +1,190 @@
+{
+  "command_type": "portfolio_monthly_update",
+  "execution_date": "2025-06-28",
+  "priority": "HIGH",
+  "summary": "6월 퇴직연금 포트폴리오 분석 완료 및 7월 전략 수립",
+  
+  "analysis_results": {
+    "investment_performance": {
+      "total_transactions": 20,
+      "total_amount": 58279830,
+      "average_transaction": 2913992,
+      "investment_focus": "테마주 집중 투자 (79.5%)"
+    },
+    "top_holdings": [
+      {
+        "symbol": "KODEX 증권",
+        "weight": "28.1%",
+        "amount": 16376500,
+        "strategy": "상법개정 수혜"
+      },
+      {
+        "symbol": "PLUS K방산",
+        "weight": "26.7%", 
+        "amount": 15575155,
+        "strategy": "지정학적 리스크 대응"
+      },
+      {
+        "symbol": "TIGER K방산&우주",
+        "weight": "15.2%",
+        "amount": 8844875,
+        "strategy": "방산/우주항공 융합"
+      }
+    ],
+    "risk_assessment": {
+      "concentration_risk": "HIGH",
+      "sector_risk": "HIGH", 
+      "geographic_risk": "MEDIUM",
+      "overall_risk": "HIGH"
+    }
+  },
+  
+  "july_action_plan": {
+    "immediate_actions": [
+      {
+        "action": "REBALANCE",
+        "target": "안전자산 확대",
+        "amount": 5000000,
+        "priority": "URGENT",
+        "timeline": "7월 첫째 주"
+      },
+      {
+        "action": "DIVERSIFY",
+        "target": "글로벌 ETF 추가",
+        "amount": 8000000,
+        "priority": "HIGH",
+        "timeline": "7월 둘째 주"
+      },
+      {
+        "action": "REDUCE",
+        "target": "방산 테마 일부 익절",
+        "amount": 10000000,
+        "priority": "MEDIUM",
+        "timeline": "7월 셋째 주"
+      }
+    ],
+    
+    "monitoring_alerts": [
+      {
+        "type": "PORTFOLIO_VOLATILITY",
+        "threshold": "daily_change > 5%",
+        "action": "immediate_notification"
+      },
+      {
+        "type": "SECTOR_CONCENTRATION", 
+        "threshold": "single_theme > 45%",
+        "action": "rebalancing_alert"
+      },
+      {
+        "type": "PROFIT_TAKING",
+        "threshold": "individual_stock > 20% profit",
+        "action": "partial_sell_consideration"
+      }
+    ]
+  },
+  
+  "gemini_instructions": {
+    "calendar_tasks": [
+      {
+        "date": "2025-07-05",
+        "time": "09:00",
+        "task": "안전자산 ETF 500만원 매수",
+        "details": "TIGER 국고채10년 300만원 + ACE KRX금현물 200만원"
+      },
+      {
+        "date": "2025-07-12", 
+        "time": "10:00",
+        "task": "글로벌 ETF 800만원 매수",
+        "details": "KODEX 미국S&P500 500만원 + KODEX 나스닥100 300만원"
+      },
+      {
+        "date": "2025-07-19",
+        "time": "14:00", 
+        "task": "방산 테마 일부 익절",
+        "details": "PLUS K방산 30% 또는 TIGER K방산&우주 20% 매도"
+      },
+      {
+        "date": "2025-07-31",
+        "time": "16:00",
+        "task": "7월 포트폴리오 성과 분석",
+        "details": "월간 리포트 생성 및 8월 전략 수립"
+      }
+    ],
+    
+    "daily_monitoring": {
+      "time": "08:00",
+      "tasks": [
+        "포트폴리오 평가액 체크",
+        "개별 종목 ±10% 변동 모니터링", 
+        "시장 주요 뉴스 확인",
+        "Claude 긴급 분석 요청 확인"
+      ]
+    },
+    
+    "weekly_reports": {
+      "day": "Friday",
+      "time": "17:00",
+      "format": "투자 성과 + 시장 분석 + 다음 주 계획",
+      "recipients": "박사님 + Claude 시스템"
+    }
+  },
+  
+  "performance_targets": {
+    "july_goals": {
+      "absolute_return": "5-10%",
+      "risk_reduction": "테마주 비중 79% → 65%",
+      "diversification": "글로벌 비중 1% → 15%",
+      "safety_buffer": "안전자산 1% → 10%"
+    },
+    
+    "2025_targets": {
+      "annual_return": "15-25%",
+      "portfolio_balance": "성장 60% + 안전 25% + 글로벌 15%",
+      "risk_management": "최대손실 -20% 이하"
+    }
+  },
+  
+  "claude_collaboration": {
+    "analysis_schedule": {
+      "daily": "시장 상황 모니터링",
+      "weekly": "포트폴리오 성과 분석", 
+      "monthly": "종합 전략 재검토",
+      "quarterly": "은퇴 목표 진척도 평가"
+    },
+    
+    "communication_triggers": [
+      "포트폴리오 변동률 ±10% 초과",
+      "개별 종목 ±20% 급등락",
+      "시장 중요 이슈 발생",
+      "정기 리밸런싱 시점"
+    ],
+    
+    "data_sharing": {
+      "transaction_logs": "실시간 업데이트",
+      "performance_metrics": "일일 업데이트",
+      "market_analysis": "주간 업데이트",
+      "strategy_updates": "월간 업데이트"
+    }
+  },
+  
+  "success_metrics": {
+    "short_term": {
+      "1_month": "적절한 리밸런싱으로 리스크 감소",
+      "3_months": "분산투자 효과로 안정성 확보",
+      "6_months": "목표 수익률 10-15% 달성"
+    },
+    
+    "long_term": {
+      "2026": "포트폴리오 밸런스 정착",
+      "2028": "은퇴 준비 가속화", 
+      "2030": "2.5억원 목표 달성"
+    }
+  },
+  
+  "notes": {
+    "investment_philosophy": "집중 투자로 수익 극대화 → 점진적 안정화",
+    "risk_tolerance": "현재 HIGH → 목표 MEDIUM",
+    "claude_assessment": "6월 투자 A-등급, 리스크 관리 보완 필요",
+    "next_review": "2025-07-31 월간 종합 분석"
+  }
+}
