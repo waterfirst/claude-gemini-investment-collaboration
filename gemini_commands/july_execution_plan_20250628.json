@@ -1,0 +1,281 @@
+{
+  "command_type": "july_execution_plan",
+  "execution_date": "2025-06-28",
+  "priority": "URGENT",
+  "status": "READY_TO_EXECUTE",
+  "summary": "6월 A+등급 성과 달성, 7월 최적화 전략 실행 준비",
+  
+  "performance_summary": {
+    "june_grade": "A+",
+    "current_assets": 269662763,
+    "allocation": {
+      "korean_listed": "58.86%",
+      "equity_etf": "41.14%",
+      "safety_assets": "0%"
+    },
+    "cumulative_return": "2.56%",
+    "cumulative_profit": 6731523,
+    "assessment": "테마 투자 성공, 적절한 분산 달성"
+  },
+  
+  "july_execution_schedule": {
+    "week_1": {
+      "date_range": "2025-07-01 ~ 2025-07-05",
+      "theme": "안전자산 확대",
+      "target_amount": 15000000,
+      "actions": [
+        {
+          "date": "2025-07-02",
+          "time": "09:00",
+          "action": "BUY",
+          "symbol": "TIGER 국고채10년",
+          "amount": 8000000,
+          "priority": "HIGH",
+          "reason": "포트폴리오 안정성 강화"
+        },
+        {
+          "date": "2025-07-03",
+          "time": "10:00", 
+          "action": "BUY",
+          "symbol": "ACE KRX금현물",
+          "amount": 4000000,
+          "priority": "HIGH",
+          "reason": "인플레이션 헤지"
+        },
+        {
+          "date": "2025-07-04",
+          "time": "11:00",
+          "action": "BUY", 
+          "symbol": "KODEX 단기채권",
+          "amount": 3000000,
+          "priority": "MEDIUM",
+          "reason": "유동성 확보"
+        }
+      ]
+    },
+    
+    "week_2": {
+      "date_range": "2025-07-08 ~ 2025-07-12",
+      "theme": "글로벌 분산 확대",
+      "target_amount": 20000000,
+      "actions": [
+        {
+          "date": "2025-07-09",
+          "time": "09:30",
+          "action": "BUY",
+          "symbol": "KODEX 미국S&P500",
+          "amount": 10000000,
+          "priority": "HIGH",
+          "reason": "글로벌 분산 및 달러 헤지"
+        },
+        {
+          "date": "2025-07-10",
+          "time": "10:30",
+          "action": "BUY",
+          "symbol": "KODEX 나스닥100", 
+          "amount": 6000000,
+          "priority": "HIGH",
+          "reason": "AI/기술주 성장 트렌드"
+        },
+        {
+          "date": "2025-07-11",
+          "time": "11:30",
+          "action": "BUY",
+          "symbol": "TIGER 유럽배당귀족",
+          "amount": 4000000,
+          "priority": "MEDIUM",
+          "reason": "지역 분산 및 배당 수익"
+        }
+      ]
+    },
+    
+    "week_3": {
+      "date_range": "2025-07-15 ~ 2025-07-19", 
+      "theme": "선택적 리밸런싱",
+      "strategy": "profit_taking_and_rotation",
+      "actions": [
+        {
+          "date": "2025-07-16",
+          "time": "14:00",
+          "action": "PARTIAL_SELL",
+          "symbol": "PLUS K방산",
+          "ratio": "20%",
+          "priority": "MEDIUM",
+          "reason": "수익 실현 및 비중 조정"
+        },
+        {
+          "date": "2025-07-17",
+          "time": "10:00",
+          "action": "BUY",
+          "symbol": "KODEX 고배당",
+          "amount": 8000000,
+          "priority": "MEDIUM",
+          "reason": "배당 수익으로 안정성 확보"
+        }
+      ]
+    },
+    
+    "week_4": {
+      "date_range": "2025-07-22 ~ 2025-07-26",
+      "theme": "성장주 보강",
+      "target_amount": 12000000,
+      "actions": [
+        {
+          "date": "2025-07-23",
+          "time": "11:00",
+          "action": "BUY",
+          "symbol": "KODEX 미국AI전력핵심인프라",
+          "amount": 7000000,
+          "priority": "MEDIUM",
+          "reason": "AI 인프라 투자 확대"
+        },
+        {
+          "date": "2025-07-24",
+          "time": "10:00",
+          "action": "BUY", 
+          "symbol": "TIGER 2차전지",
+          "amount": 5000000,
+          "priority": "MEDIUM",
+          "reason": "전기차/ESG 트렌드 수혜"
+        }
+      ]
+    },
+    
+    "month_end": {
+      "date": "2025-07-30",
+      "time": "16:00",
+      "action": "ANALYSIS",
+      "task": "7월 성과 분석 및 8월 전략 수립",
+      "priority": "HIGH",
+      "deliverables": [
+        "월간 성과 리포트 생성",
+        "벤치마크 대비 분석",
+        "8월 투자 계획 수립",
+        "Claude와 협업 현황 점검"
+      ]
+    }
+  },
+  
+  "monitoring_system": {
+    "daily_alerts": [
+      {
+        "time": "08:00",
+        "task": "포트폴리오 평가액 체크",
+        "threshold": "±3% 변동시 알림"
+      },
+      {
+        "time": "15:30",
+        "task": "개별 ETF 성과 모니터링", 
+        "threshold": "±10% 변동시 알림"
+      }
+    ],
+    
+    "weekly_reports": {
+      "day": "Friday",
+      "time": "17:00",
+      "content": [
+        "주간 수익률 분석",
+        "목표 대비 진척도",
+        "리스크 지표 점검",
+        "다음 주 실행 계획"
+      ]
+    },
+    
+    "risk_management": {
+      "stop_loss_rules": {
+        "individual_etf": "-15%",
+        "portfolio_total": "-20%",
+        "theme_exposure": "single_theme > 40%"
+      },
+      "profit_taking_rules": {
+        "individual_etf": "+20%",
+        "theme_rotation": "+30%",
+        "rebalancing_trigger": "allocation_deviation > ±10%"
+      }
+    }
+  },
+  
+  "target_portfolio_allocation": {
+    "end_of_july": {
+      "korean_listed": "50%",
+      "global_etf": "40%", 
+      "safety_assets": "10%"
+    },
+    "rationale": "리스크 분산과 안정성 확보를 통한 최적화"
+  },
+  
+  "performance_targets": {
+    "july_goals": {
+      "absolute_return": "3-5%",
+      "relative_return": "KOSPI +2%p",
+      "volatility_reduction": "daily_vol < 3%",
+      "safety_ratio": "안전자산 10% 달성"
+    },
+    
+    "2025_goals": {
+      "annual_return": "20-25%",
+      "total_assets": "3.5억원",
+      "retirement_progress": "70% 완료"
+    }
+  },
+  
+  "claude_collaboration": {
+    "communication_schedule": {
+      "daily": "포트폴리오 상태 공유",
+      "weekly": "성과 분석 및 조정",
+      "monthly": "전략 재검토",
+      "quarterly": "장기 목표 점검"
+    },
+    
+    "data_sharing": {
+      "transaction_logs": "실시간 업데이트",
+      "performance_metrics": "일일 업데이트", 
+      "market_analysis": "주간 업데이트",
+      "strategy_adjustments": "필요시 즉시"
+    }
+  },
+  
+  "success_indicators": {
+    "immediate": [
+      "안전자산 10% 비중 달성",
+      "글로벌 분산 40% 비중 달성",
+      "일일 변동성 3% 이하 유지"
+    ],
+    
+    "medium_term": [
+      "월간 수익률 3-5% 달성",
+      "KOSPI 대비 2%p 아웃퍼폼",
+      "리스크 조정 수익률 개선"
+    ],
+    
+    "long_term": [
+      "2025년 연수익률 20%+ 달성",
+      "2030년 은퇴 목표 조기 달성",
+      "안정적 연금 수령 체계 구축"
+    ]
+  },
+  
+  "contingency_plans": {
+    "market_crash": {
+      "trigger": "KOSPI -10% 이상",
+      "action": "안전자산 20%로 확대, 성장주 일시 중단"
+    },
+    
+    "theme_rotation": {
+      "trigger": "방산주 -20% 이상",
+      "action": "테마 교체, 헬스케어/유틸리티로 이동"
+    },
+    
+    "profit_opportunity": {
+      "trigger": "개별 ETF +30% 이상",
+      "action": "1/3 익절, 타 자산으로 순환"
+    }
+  },
+  
+  "notes": {
+    "investment_philosophy": "6월 성공을 바탕으로 한 체계적 최적화",
+    "key_focus": "안정성과 성장성의 균형",
+    "claude_recommendation": "A+ 등급 유지하면서 리스크 관리 강화",
+    "gemini_mission": "Claude 분석 기반 정확한 실행 및 모니터링"
+  }
+}
