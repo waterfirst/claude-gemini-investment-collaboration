@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini Build 투자 일지 웹앱 개발 과정</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            padding: 40px 0;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .content {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .step {
+            margin-bottom: 40px;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border-left: 5px solid #667eea;
+        }
+        
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            font-weight: bold;
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .step-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .step-content {
+            margin-left: 55px;
+        }
+        
+        .prompt-box {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            position: relative;
+            overflow-x: auto;
+        }
+        
+        .prompt-box::before {
+            content: "📝 프롬프트";
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            background: #667eea;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        
+        .code-box {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            position: relative;
+            overflow-x: auto;
+        }
+        
+        .code-box::before {
+            content: "💻 코드";
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            background: #28a745;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .feature-card {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .feature-card h4 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .tech-tag {
+            background: #667eea;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+            color: #2c3e50;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #667eea;
+        }
+        
+        .timeline {
+            position: relative;
+            margin: 30px 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #667eea;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-left: 70px;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -50px;
+            top: 25px;
+            width: 12px;
+            height: 12px;
+            background: #667eea;
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+        
+        .screenshot {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+        
+        .button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: transform 0.2s;
+        }
+        
+        .button:hover {
+            transform: translateY(-2px);
+        }
+        
+        .footer {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .step-content {
+                margin-left: 0;
+            }
+            
+            .step-title {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .step-number {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 Gemini Build 투자 일지 웹앱</h1>
+            <p>AI와 함께하는 투자 관리 시스템 개발 과정</p>
+        </div>
+        
+        <div class="content">
+            <h2>📋 프로젝트 개요</h2>
+            <p>Google Gemini Build를 활용하여 개인 퇴직연금 투자를 체계적으로 관리할 수 있는 웹 애플리케이션을 개발한 과정을 상세히 기록합니다.</p>
+            
+            <div class="highlight">
+                <strong>🎯 개발 목표:</strong> 실시간 포트폴리오 추적, 투자 일지 작성, 차트 분석, 7월 투자 계획 관리를 위한 통합 대시보드 구축
+            </div>
+            
+            <div class="tech-stack">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">Recharts</span>
+                <span class="tech-tag">Tailwind CSS</span>
+                <span class="tech-tag">Lucide Icons</span>
+                <span class="tech-tag">Gemini AI</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <h2>🛠️ 단계별 개발 과정</h2>
+            
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">1</span>
+                    <span>기본 투자 일지 구조 요청</span>
+                </div>
+                <div class="step-content">
+                    <p>투자 기록을 체계적으로 관리할 수 있는 기본 구조를 요청했습니다.</p>
+                    <div class="prompt-box">
+투자 일지에 메모 기능을 넣어줘
+일자, 시간, 투자 종목, 매도/매수 선택, 금액, 매도/매수 이유 작성란 넣어서 저장하도록 해줘
+                    </div>
+                    <p><strong>구현 결과:</strong></p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>날짜 및 시간 입력 필드</li>
+                        <li>종목명 입력</li>
+                        <li>매수/매도 선택 라디오 버튼</li>
+                        <li>투자 금액 입력</li>
+                        <li>투자 이유 텍스트 영역</li>
+                        <li>로컬 스토리지 기반 데이터 저장</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">2</span>
+                    <span>실제 자산 데이터 반영</span>
+                </div>
+                <div class="step-content">
+                    <p>이미지를 통해 실제 보유 자산 현황을 제공하고 시스템에 반영을 요청했습니다.</p>
+                    <div class="prompt-box">
+현재 내 보유 자산을 이미지를 참고해서 수정하라
+[이미지: 자산 현황 스크린샷]
+                    </div>
+                    <p><strong>구현 결과:</strong></p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>현금성자산과 주식+ETF 구분</li>
+                        <li>실제 평가금액 반영</li>
+                        <li>동적 수익률 계산</li>
+                        <li>대시보드 지표 업데이트</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">3</span>
+                    <span>상세 ETF 정보 입력</span>
+                </div>
+                <div class="step-content">
+                    <p>보유 ETF를 구체적으로 명시하고 수익률 계산 방식을 개선했습니다.</p>
+                    <div class="prompt-box">
+포트 폴리오에서 주식+EFF는 현재 내가 보유하고 있는 ETF로 좀 더 상세히 써라.
+그리고 대시보드에서는 수익율을 내가 투자한 것 대비 이익율을 표시하도록 하라
+                    </div>
+                    <p><strong>구현 결과:</strong></p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>개별 ETF 상세 내역 표시</li>
+                        <li>투자원금 대비 손익 계산</li>
+                        <li>실시간 수익률 표시</li>
+                        <li>비중별 포트폴리오 구성</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">4</span>
+                    <span>실제 보유 ETF 업데이트</span>
+                </div>
+                <div class="step-content">
+                    <p>실제 퇴직연금 계좌의 ETF 보유 현황을 정확히 반영했습니다.</p>
+                    <div class="prompt-box">
+현재 퇴직연금 보유 ETF 이다. 업데이트 하라
+[이미지: 퇴직연금 ETF 보유 현황]
+                    </div>
+                    <p><strong>구현 결과:</strong></p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>16개 ETF 종목 정확 반영</li>
+                        <li>각 종목별 평가금액 입력</li>
+                        <li>현금성자산 포함 전체 포트폴리오</li>
+                        <li>자동 비중 계산 및 표시</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">5</span>
+                    <span>차트 기능 추가</span>
+                </div>
+                <div class="step-content">
+                    <p>각 ETF 종목을 클릭하면 최근 시세 차트를 볼 수 있는 기능을 추가했습니다.</p>
+                    <div class="prompt-box">
+각 ETF 종목을 클릭하면 최근 차트를 보이도록 하라
+                    </div>
+                    <p><strong>구현 결과:</strong></p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>클릭 가능한 종목 행</li>
+                        <li>30일간 가격 변동 차트</li>
+                        <li>Recharts 라이브러리 활용</li>
+                        <li>다크 테마 차트 디자인</li>
+                        <li>차트 토글 기능</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">6</span>
+                    <span>적립식 투자 전략 분석</span>
+                </div>
+                <div class="step-content">
+                    <p>기존 적립식 투자 현황을 분석하여 7월 투자 계획과 연계했습니다.</p>
+                    <div class="prompt-box">
+나는 적립식으로 이미지와 같이 투자하고 있었다. 전략 변경이 필요한지 판단하여 7월 계획에 넣어라
+[이미지: 적립식 자동매수 현황]
+                    </div>
+                    <p><strong>구현 결과:</strong></p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>기존 적립식 투자 분석</li>
+                        <li>7월 전략과의 상충점 발견</li>
+                        <li>최적화 방안 제시</li>
+                        <li>통합 투자 계획 수정</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <h2>✨ 주요 구현 기능</h2>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>📊 실시간 대시보드</h4>
+                    <p>총 자산, 수익률, 목표 달성률을 한눈에 확인할 수 있는 대시보드</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>💼 포트폴리오 관리</h4>
+                    <p>16개 ETF 종목별 상세 정보와 비중을 실시간으로 추적</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>📝 투자 일지</h4>
+                    <p>매매 내역과 투자 이유를 체계적으로 기록하고 관리</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>📈 차트 분석</h4>
+                    <p>종목별 최근 30일간 가격 변동을 시각적으로 확인</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>🎯 투자 계획</h4>
+                    <p>7월 투자 전략과 목표를 구체적으로 설정하고 추적</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>🔄 자동 계산</h4>
+                    <p>수익률, 비중, 목표 달성률을 자동으로 계산하고 업데이트</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <h2>🏗️ 기술적 구현 사항</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h4>React + TypeScript 구조</h4>
+                    <p>컴포넌트 기반 모듈러 아키텍처로 유지보수성 확보</p>
+                    <div class="code-box">
+// 주요 컴포넌트 구조
+- App.tsx (메인 애플리케이션)
+- Dashboard.tsx (대시보드)
+- Portfolio.tsx (포트폴리오)
+- TradeJournal.tsx (투자 일지)
+- AssetChart.tsx (차트 컴포넌트)
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <h4>상태 관리</h4>
+                    <p>React Hooks를 활용한 효율적인 상태 관리</p>
+                    <div class="code-box">
+// 포트폴리오 데이터 관리
+const [selectedAsset, setSelectedAsset] = useState&lt;string | null&gt;(null);
+const [showChart, setShowChart] = useState(false);
+
+// 동적 수익률 계산
+const totalInvestment = portfolioData.reduce(...);
+const currentValue = portfolioData.reduce(...);
+const profitLoss = currentValue - totalInvestment;
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <h4>반응형 디자인</h4>
+                    <p>Tailwind CSS를 활용한 모바일 친화적 UI/UX</p>
+                    <div class="code-box">
+// 반응형 그리드 레이아웃
+&lt;div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"&gt;
+  {dashboardCards.map(card =&gt; ...)}
+&lt;/div&gt;
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <h4>데이터 시각화</h4>
+                    <p>Recharts를 활용한 인터랙티브 차트</p>
+                    <div class="code-box">
+// 라인 차트 구현
+&lt;LineChart data={chartData}&gt;
+  &lt;XAxis dataKey="date" /&gt;
+  &lt;YAxis /&gt;
+  &lt;Tooltip /&gt;
+  &lt;Line type="monotone" dataKey="price" stroke="#667eea" /&gt;
+&lt;/LineChart&gt;
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <h2>📊 개발 성과</h2>
+            
+            <div class="highlight">
+                <h4>🎯 달성한 목표</h4>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li><strong>실시간 모니터링:</strong> 269,662,763원 총 자산의 실시간 추적</li>
+                    <li><strong>정확한 데이터:</strong> 16개 ETF 종목의 정확한 반영</li>
+                    <li><strong>사용자 경험:</strong> 클릭 한 번으로 차트 확인 가능</li>
+                    <li><strong>전략 통합:</strong> 적립식 투자와 7월 계획의 완벽한 연계</li>
+                    <li><strong>자동 계산:</strong> 수익률 및 목표 달성률 자동 산출</li>
+                </ul>
+            </div>
+            
+            <h3>📈 주요 지표</h3>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>총 관리 자산</h4>
+                    <p style="font-size: 1.5rem; font-weight: bold;">269,662,763원</p>
+                </div>
+                <div class="feature-card">
+                    <h4>보유 종목 수</h4>
+                    <p style="font-size: 1.5rem; font-weight: bold;">16개 ETF</p>
+                </div>
+                <div class="feature-card">
+                    <h4>개발 기간</h4>
+                    <p style="font-size: 1.5rem; font-weight: bold;">1일</p>
+                </div>
+                <div class="feature-card">
+                    <h4>상호작용 수</h4>
+                    <p style="font-size: 1.5rem; font-weight: bold;">6회 대화</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <h2>🔮 향후 개선 계획</h2>
+            
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">📱</span>
+                    <span>모바일 최적화</span>
+                </div>
+                <div class="step-content">
+                    <p>터치 인터페이스와 모바일 환경에 최적화된 UI/UX 개선</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">🔗</span>
+                    <span>실시간 데이터 연동</span>
+                </div>
+                <div class="step-content">
+                    <p>실제 증권사 API와 연동하여 실시간 시세 정보 반영</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">🤖</span>
+                    <span>AI 투자 분석</span>
+                </div>
+                <div class="step-content">
+                    <p>Claude와 Gemini를 활용한 포트폴리오 분석 및 투자 제안 기능</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">📊</span>
+                    <span>고급 차트 분석</span>
+                </div>
+                <div class="step-content">
+                    <p>기술적 지표, 이동평균, 볼린저 밴드 등 전문적인 차트 분석 도구 추가</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <h2>💡 학습한 것들</h2>
+            
+            <div class="highlight">
+                <h4>🧠 Gemini Build의 강점</h4>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li><strong>즉각적인 피드백:</strong> 실시간으로 요구사항을 반영하고 수정</li>
+                    <li><strong>이미지 인식:</strong> 스크린샷을 통한 정확한 데이터 입력</li>
+                    <li><strong>컨텍스트 유지:</strong> 이전 대화 내용을 기억하여 일관된 개발</li>
+                    <li><strong>실용적 접근:</strong> 실제 사용 가능한 수준의 애플리케이션 구현</li>
+                </ul>
+            </div>
+            
+            <div class="highlight">
+                <h4>🔧 개발 팁</h4>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li><strong>명확한 요구사항:</strong> 구체적이고 명확한 프롬프트가 더 좋은 결과 생성</li>
+                    <li><strong>점진적 개선:</strong> 한 번에 모든 기능보다는 단계적 개발이 효과적</li>
+                    <li><strong>실제 데이터 활용:</strong> 가상 데이터보다 실제 데이터를 사용할 때 더 실용적</li>
+                    <li><strong>시각적 자료 제공:</strong> 이미지나 스크린샷 제공시 더 정확한 구현</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <h3>🚀 프로젝트 완성</h3>
+            <p>Gemini Build를 활용하여 실용적인 투자 관리 웹앱을 성공적으로 구현했습니다.</p>
+            <p>AI와의 협업을 통해 개발 시간을 단축하고 사용자 중심의 기능을 구현할 수 있었습니다.</p>
+            <br>
+            <a href="https://github.com/waterfirst/claude-gemini-investment-collaboration" class="button">GitHub 리포지토리 보기</a>
+        </div>
+    </div>
+</body>
+</html>
